@@ -1,0 +1,39 @@
+.root
+  position: relative
+  width: fit-content
+  
+$tagUnitHieght: 20px
+$tooltipColor: rgba(0, 0, 0, 0.8)
+$tooltiopTopPosition: 4px
+$arrowHeight: 6px
+
+.root
+  &:before
+    content: attr(datatype)
+    position: absolute
+    padding: 8px 16px
+    background-color: $tooltipColor
+    border-radius: 12px
+    top: calc(#{$tagUnitHieght} + #{$tooltiopTopPosition} + #{$arrowHeight})
+    left: 25%
+    transform: translateX(-25%)
+    display: none
+    color: white
+    z-index: 1
+  &:after
+    content: ''
+    position: absolute
+    top: calc(#{$tagUnitHieght} + #{$tooltiopTopPosition})
+    transform: rotate(-45deg)
+    left: calc(50% - #{$arrowHeight})
+    border: $arrowHeight solid
+    border-top-right-radius: 2px
+    border-color: $tooltipColor $tooltipColor transparent transparent
+    display: none
+    z-index: 1
+
+.root:hover
+  &:before
+    display: block
+  &:after
+    display: block

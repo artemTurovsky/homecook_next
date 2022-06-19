@@ -1,0 +1,1 @@
+export const SOLANA_LAMPORTS_FEE = 5000
