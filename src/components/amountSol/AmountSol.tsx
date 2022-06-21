@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import s from './AmountSol.module.sass'
 import { LAMPORTS_PER_SOL } from '@solana/web3.js'
-import { getShortAmountSol } from './utils/getShortAmountSOL'
+import { getShortAmountSol } from './utils/getShortAmountSol'
 
 interface IProps {
   amountLamports: number
