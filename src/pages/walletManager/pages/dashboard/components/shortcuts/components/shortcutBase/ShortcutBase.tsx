@@ -1,4 +1,3 @@
-
 import s from './ShortcutBase.module.sass'
 
 interface IProps {

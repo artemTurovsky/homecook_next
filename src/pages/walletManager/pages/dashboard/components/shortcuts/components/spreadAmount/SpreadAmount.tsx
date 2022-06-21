@@ -2,17 +2,16 @@ import { useConnection } from "@solana/wallet-adapter-react"
 import { LAMPORTS_PER_SOL } from "@solana/web3.js"
 import { ChangeEvent, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
+
 import AmountSol from "../../../../../../../../components/amountSol/AmountSol"
 import { selectGroupedWallets } from "../../../../../../store/walletManager.selectors"
 import { getTransactionConfig } from "../../../../../../utils/getTransactionConfig"
 import { sendLamports } from "../../../../../../utils/sendLamports"
 import ShortcutBase from "../shortcutBase/ShortcutBase"
-import { getEquallySplitAmount } from "../spreadEqually/utils/getEquallySplitAmount"
-import { getMaxPossibleEqualAmount } from "./utils/getMaxPossibleEqualAmount"
-
-import s from './SpreadAmount.module.sass'
 import { getEqualAmountLamports } from "./utils/getEqualAmountLamports"
 import { walletManagerActions } from "../../../../../../store/walletManager.reducer"
+
+import s from './SpreadAmount.module.sass'
 
 const SpreadAmount = () => {
   const { connection } = useConnection()

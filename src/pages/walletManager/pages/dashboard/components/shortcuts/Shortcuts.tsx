@@ -1,5 +1,6 @@
 
 import { useSelector } from 'react-redux'
+
 import { useRequestWalletsBalance } from '../../../../hooks/useRequestWalletsBalance'
 import { selectRawPrivateWallets } from '../../../../store/walletManager.selectors'
 import CollectFromSlots from './components/collectFromSlots/CollectFromSlots'

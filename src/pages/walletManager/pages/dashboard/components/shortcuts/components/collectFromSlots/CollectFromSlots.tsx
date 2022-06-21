@@ -1,5 +1,6 @@
 import { useConnection } from "@solana/wallet-adapter-react"
 import { useDispatch, useSelector } from "react-redux"
+
 import AmountSol from "../../../../../../../../components/amountSol/AmountSol"
 import { walletManagerActions } from "../../../../../../store/walletManager.reducer"
 import { selectGroupedWallets } from "../../../../../../store/walletManager.selectors"
@@ -8,6 +9,7 @@ import { sendLamports } from "../../../../../../utils/sendLamports"
 import { getWalletsThatCouldSendLamports } from "../../utils/getWalletsThatCouldSendLamports"
 import ShortcutBase from "../shortcutBase/ShortcutBase"
 import { getAmountSolAfterReceiving } from "./utils/getAmountSolAfterReceiving"
+
 import s from './CollectFromSlots.module.sass'
 
 const CollectFromSlots = () => {

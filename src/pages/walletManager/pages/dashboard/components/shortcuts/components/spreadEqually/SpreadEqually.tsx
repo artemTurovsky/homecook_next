@@ -1,7 +1,7 @@
 import { useConnection } from "@solana/wallet-adapter-react"
-import { LAMPORTS_PER_SOL } from "@solana/web3.js"
 import { ChangeEvent, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+
 import AmountSol from "../../../../../../../../components/amountSol/AmountSol"
 import { walletManagerActions } from "../../../../../../store/walletManager.reducer"
 import { selectGroupedWallets } from "../../../../../../store/walletManager.selectors"
@@ -9,6 +9,7 @@ import { getTransactionConfig } from "../../../../../../utils/getTransactionConf
 import { sendLamports } from "../../../../../../utils/sendLamports"
 import ShortcutBase from "../shortcutBase/ShortcutBase"
 import { getEquallySplitAmount } from "./utils/getEquallySplitAmount"
+
 import s from './SpreadEqually.module.sass'
 
 const SpreadEqually = () => {
