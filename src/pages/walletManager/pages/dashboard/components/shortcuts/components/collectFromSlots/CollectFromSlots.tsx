@@ -8,7 +8,7 @@ import { getTransactionConfig } from "../../../../../../utils/getTransactionConf
 import { sendLamports } from "../../../../../../utils/sendLamports"
 import { getWalletsThatCouldSendLamports } from "../../utils/getWalletsThatCouldSendLamports"
 import ShortcutBase from "../shortcutBase/ShortcutBase"
-import { getAmountSolAfterReceiving } from "./utils/getAmountSOLAfterReceiving"
+import { getAmountSolAfterReceiving } from "./utils/getAmount"
 
 import s from './CollectFromSlots.module.sass'
 
