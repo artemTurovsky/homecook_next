@@ -1,5 +1,4 @@
-
-import { LAMPORTS_PER_SOL } from '@solana/web3.js'
+import AmountSol from '../../../../../../../../components/amountSol/AmountSol'
 import ShortPublicKey from '../../../../../../../../components/publicKey/ShortPublicKey'
 import { IPrivateWallet } from '../../../../../../types/types'
 
@@ -15,9 +14,8 @@ const Wallet = ({ wallet }: IProps) => {
   return (
     <div className={s.root}>
       <p>{name}</p>
-      <ShortPublicKey privateKey={privateKey}/>
-      {/* <AmountSol amountSOL={amountLamports / LAMPORTS_PER_SOL}/> */}
-      <div>{amountLamports / LAMPORTS_PER_SOL}</div>
+      <ShortPublicKey className={s.pubKey} privateKey={privateKey}/>
+      <AmountSol amountLamports={amountLamports}/>
     </div>
   )
 }

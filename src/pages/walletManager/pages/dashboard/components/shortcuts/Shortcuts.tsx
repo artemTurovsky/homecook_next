@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux'
 import { useRequestWalletsBalance } from '../../../../hooks/useRequestWalletsBalance'
 import { selectRawPrivateWallets } from '../../../../store/walletManager.selectors'
 import CollectFromSlots from './components/collectFromSlots/CollectFromSlots'
+import FulfillSlots from './components/fulfillSlots/FulfillSlots'
 import Signatures from './components/signatures/Signatures'
+import SpreadAmount from './components/spreadAmount/SpreadAmount'
 import SpreadEqually from './components/spreadEqually/SpreadEqually'
 
 import s from './Shortcuts.module.sass'
@@ -30,6 +32,10 @@ const Shortcuts = () => {
       <div className={s.shortcutsContainer}>
         <CollectFromSlots/>
         <SpreadEqually/>
+      </div>
+      <div className={s.shortcutsContainer}>
+        <FulfillSlots />
+        <SpreadAmount />
       </div>
     </div>
   )

@@ -10,9 +10,9 @@ interface IProps {
 const ShortcutBase = ({ children, title, onClick }: IProps) => {
   return (
     <div className={s.root}>
-      <p>{title}</p>
+      <p className={s.title}>{title}</p>
       {children}
-      <button onClick={onClick} type='button'>Send</button>
+      <button className={s.button} onClick={onClick} type='button'>Send</button>
     </div>
   )
 }

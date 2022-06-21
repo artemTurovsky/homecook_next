@@ -1,4 +1,3 @@
-
 import Shortcuts from "./components/shortcuts/Shortcuts"
 import WalletList from "./components/walletList/WalletList"
 import cn from 'classnames'
@@ -9,6 +8,7 @@ import { NextPage } from "next"
 import { useSelector } from "react-redux"
 import { selectDashboardLoading, selectGroupedWallets } from "../../store/walletManager.selectors"
 import { useRequestWalletsBalance } from "../../hooks/useRequestWalletsBalance"
+import Loader from "../../../../components/loader/Loader"
 
 const Dashboard: NextPage = () => {
   const groupedWallets = useSelector(selectGroupedWallets)
@@ -16,12 +16,16 @@ const Dashboard: NextPage = () => {
   useRequestWalletsBalance()
 
   const getContent = () => {
+    if (!groupedWallets && loading) {
+      return <Loader/>
+    }
+
     if (!groupedWallets) {
       return null
     }
 
     if (loading) {
-      return <div>Loading...</div>
+      return <Loader/>
     }
 
     return (

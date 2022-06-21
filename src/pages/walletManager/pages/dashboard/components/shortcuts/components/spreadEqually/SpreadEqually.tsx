@@ -2,12 +2,14 @@ import { useConnection } from "@solana/wallet-adapter-react"
 import { LAMPORTS_PER_SOL } from "@solana/web3.js"
 import { ChangeEvent, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import AmountSol from "../../../../../../../../components/amountSol/AmountSol"
 import { walletManagerActions } from "../../../../../../store/walletManager.reducer"
 import { selectGroupedWallets } from "../../../../../../store/walletManager.selectors"
 import { getTransactionConfig } from "../../../../../../utils/getTransactionConfig"
 import { sendLamports } from "../../../../../../utils/sendLamports"
 import ShortcutBase from "../shortcutBase/ShortcutBase"
 import { getEquallySplitAmount } from "./utils/getEquallySplitAmount"
+import s from './SpreadEqually.module.sass'
 
 const SpreadEqually = () => {
   const { connection } = useConnection()
@@ -60,13 +62,16 @@ const SpreadEqually = () => {
   return (
     <ShortcutBase onClick={handleClick} title="Spread Equally">
       <div>
-        <p>{`${splitLamports / LAMPORTS_PER_SOL} SOL on each ${isLeaveSameAmountOnMain ? 'wallet' : 'slot'}`}</p>
-        <div>
-          <input onChange={handleChangeKeepSameOnMain} type='checkbox'/>
+        <div className={s.amount}>
+          <p>{`On each ${isLeaveSameAmountOnMain ? 'wallet' : 'slot'}`}</p>
+          <AmountSol amountLamports={splitLamports} solAfter/>
+        </div>
+        <div className={s.inputContainer}>
+          <input className={s.input} onChange={handleChangeKeepSameOnMain} type='checkbox'/>
           <span>Include main</span>
         </div>
-        <div>
-          <p>Slots amount</p>
+        <div className={s.amount}>
+          <p>Number of slots</p>
           <input value={slotAmount} onChange={handleChangeNumberOfSlots} type='text'/>
         </div>
       </div>

@@ -1,12 +1,14 @@
 import { useConnection } from "@solana/wallet-adapter-react"
 import { useDispatch, useSelector } from "react-redux"
+import AmountSol from "../../../../../../../../components/amountSol/AmountSol"
 import { walletManagerActions } from "../../../../../../store/walletManager.reducer"
 import { selectGroupedWallets } from "../../../../../../store/walletManager.selectors"
 import { getTransactionConfig } from "../../../../../../utils/getTransactionConfig"
 import { sendLamports } from "../../../../../../utils/sendLamports"
 import { getWalletsThatCouldSendLamports } from "../../utils/getWalletsThatCouldSendLamports"
 import ShortcutBase from "../shortcutBase/ShortcutBase"
-import { getAmountSOLAfterReceiving } from "./utils/getAmountSOLAfterReceiving"
+import { getAmountSolAfterReceiving } from "./utils/getAmountSolAfterReceiving"
+import s from './CollectFromSlots.module.sass'
 
 const CollectFromSlots = () => {
   const { connection } = useConnection()
@@ -34,11 +36,20 @@ const CollectFromSlots = () => {
       console.error('CollectFromSlots error', error)
     }
   }
+  const amountLamportsToReceive = getAmountSolAfterReceiving(groupedWallets.slots)
+  const mainBalanceAfterTransaction = groupedWallets.main.amountLamports + amountLamportsToReceive
 
   return (
     <ShortcutBase onClick={handleClick} title="Collect from slots">
       <div>
-        <p>{`Main's balance will be ${getAmountSOLAfterReceiving(groupedWallets)}`}</p>
+        <div className={s.amount}>
+          <p>Collect</p>
+          <AmountSol amountLamports={amountLamportsToReceive} solAfter />
+        </div>
+        <div className={s.amount}>
+          <p>{"Main's balance"}</p>
+          <AmountSol amountLamports={mainBalanceAfterTransaction} solAfter />
+        </div>
       </div>
     </ShortcutBase>
   )
