@@ -2,6 +2,9 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 
 const HomePage: NextPage = () => {
+
+  // hello new device
+
   return (
     <div>
       <ul>
