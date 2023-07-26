@@ -28,7 +28,7 @@ const SpreadAmount = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const amountSol = e.target.value
-    const numberAmountOfSol = Number(amountSol) as number | typeof NaN
+    const numberAmountOfSol = Number(amountSol)
 
     setInputValue(amountSol)
 
