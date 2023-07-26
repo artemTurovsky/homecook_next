@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.wallets.md
+wallets.md
 
 # testing
 /coverage
