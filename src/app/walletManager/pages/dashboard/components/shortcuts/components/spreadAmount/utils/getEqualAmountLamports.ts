@@ -18,7 +18,7 @@ export const getEqualAmountLamports = (params: IPrams) => {
   const mainsLamports = main.amountLamports - feeLamports
   const spreadAmount = Number(amountLamportsToSpread) 
 
-  if (spreadAmount !== NaN && mainsLamports > spreadAmount) {
+  if (!Number.isNaN(spreadAmount) && mainsLamports > spreadAmount) {
     const fixedAmountLamports = Number((spreadAmount / slots.length).toFixed())
 
     return fixedAmountLamports
