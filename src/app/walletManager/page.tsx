@@ -1,4 +1,8 @@
 import SetWallets from "./pages/setWallets/SetWallets";
 
-
-export default SetWallets
+const Page = () => {
+  return (
+    <div>hello</div>
+  )
+}
+export default Page
