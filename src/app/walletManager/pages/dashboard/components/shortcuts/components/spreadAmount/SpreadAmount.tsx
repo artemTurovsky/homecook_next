@@ -32,7 +32,7 @@ const SpreadAmount = () => {
 
     setInputValue(amountSol)
 
-    if (!amountSol || numberAmountOfSol === NaN) {
+    if (!amountSol || Number.isNaN(numberAmountOfSol)) {
       setAmountLamportsToSpread(0)
 
       return 
