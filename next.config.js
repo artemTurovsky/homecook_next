@@ -9,7 +9,10 @@ const nextConfig = {
 
     return config;
   },
-  output: 'export'
+  output: 'export',
+  experimental: {
+    appDir: true
+  }
 }
 
 module.exports = nextConfig
