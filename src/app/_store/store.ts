@@ -2,13 +2,9 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import reducer from './rootReducer'
 
-function makeStore() {
-  return configureStore({
-    reducer,
-    devTools: true
-  })
-}
-
-const store = makeStore()
+const store = configureStore({
+  reducer,
+  devTools: true
+})
 
 export default store

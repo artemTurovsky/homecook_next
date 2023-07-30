@@ -2,7 +2,7 @@ import { useConnection } from "@solana/wallet-adapter-react"
 import { useDispatch } from "react-redux"
 import { parsePrivateKey } from "../../../utils/parseSecretKey"
 import { sleep } from "../../../utils/sleep"
-import { walletManagerActions } from "../store/walletManager.reducer"
+import { walletManagerActions } from "../../_store/walletManager/walletManager.reducer"
 import { IGroupedWallets, IPrivateWallet, IRawPrivateWallet } from "../types/types"
 
 const { setPrivateWallets } = walletManagerActions

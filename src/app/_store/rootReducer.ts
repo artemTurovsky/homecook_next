@@ -1,5 +1,5 @@
 import { combineReducers } from "@reduxjs/toolkit"
-import walletManager from "../walletManager/store/walletManager.reducer"
+import walletManager from "./walletManager/walletManager.reducer"
 
 const reducers = combineReducers({
   walletManager
