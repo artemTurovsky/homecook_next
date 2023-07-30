@@ -14,7 +14,7 @@ interface IProps {
 }
 
 const Web3Wrapper: FC<IProps> = ({ children }) => {
-  const network = WalletAdapterNetwork.Mainnet
+  const network = WalletAdapterNetwork.Devnet
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   
   const wallets = useMemo(
@@ -32,7 +32,7 @@ const Web3Wrapper: FC<IProps> = ({ children }) => {
 
   return (
       <ConnectionProvider endpoint={endpoint}>
-          <WalletProvider wallets={wallets} autoConnect>
+          <WalletProvider wallets={wallets}>
             <WalletModalProvider>
               {children}
             </WalletModalProvider>

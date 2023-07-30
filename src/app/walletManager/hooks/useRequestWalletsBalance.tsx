@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
+'use client'
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { EWalletManagerPages } from "../enums/enums"
-import { walletManagerActions } from "../store/walletManager.reducer"
-import { selectRawPrivateWallets } from "../store/walletManager.selectors"
+import { walletManagerActions } from "../../_store/walletManager/walletManager.reducer"
 import { IRawPrivateWallet } from "../types/types"
 import { useGetGroupedWalletsFunc } from "./useGetGroupedWalletsFunc"
+import { selectRawPrivateWallets } from "../../_store/walletManager/walletManager.selectors"
 
 const { setSectionsLoading, setGroupedWallets } = walletManagerActions
 
